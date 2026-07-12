@@ -5,6 +5,7 @@
 @import './shell.css';
 @import './cover.css';
 @import './interview.css';
+@import './community.css';
 @import './philosophy.css';
 
 @layer base {
