@@ -1,146 +1,222 @@
 /* =========================================================================
-   Introduction — "The Foreword"
-
-   The threshold leaf between the Cover and the chapters. It reuses the Cover's
-   own devices — the three-voice seam and the listening VoiceMark — so turning
-   from the cover into the introduction reads as continuous, then hands the
-   reader a large opening statement followed by the two lenses (aim + method)
-   the project reads through. Green and blue carry the two lenses, each tied to
-   the chapter it belongs to (interview → green, philosophy → blue); rose
-   appears only in the structural seam, since the introduction holds no
-   personal content of its own.
+   Introduction — listening threshold
+   A publication-like entry point between the Cover and the engagement record.
+   The opening is one uninterrupted reading field; the two source sections
+   then unfold as distinct, offset passages rather than component cards.
    ========================================================================= */
 
-.epf-intro {
-  width: min(100%, 54rem);
+.epf-introduction {
+  width: min(100%, 68rem);
   margin-inline: auto;
-  padding-bottom: var(--space-xl);
+  padding-bottom: clamp(1rem, 4vw, 3rem);
 }
 
-/* --- Threshold masthead: the Cover's seam + voice mark, carried over ------ */
-.epf-intro-masthead {
-  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+.epf-introduction-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1.25rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 4rem);
   border-bottom: 1px solid var(--border);
 }
-.epf-intro-seam {
-  display: block;
-  height: 0.4rem;
-  width: min(100%, 18rem);
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-green) 0 33.33%,
-    var(--accent) 33.33% 66.66%,
-    var(--accent-warm) 66.66% 100%
-  );
-}
-.epf-intro-titlerow {
-  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+
+.epf-introduction-signal {
   display: flex;
-  align-items: center;
-  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: end;
+  gap: 0.35rem;
+  height: clamp(3.75rem, 10vw, 6.5rem);
+  padding-bottom: 0.2rem;
 }
-.epf-intro-voicemark {
-  width: clamp(2.75rem, 7vw, 4rem);
-  height: auto;
-  flex: none;
+
+.epf-introduction-signal span {
+  display: block;
+  width: clamp(0.48rem, 1vw, 0.7rem);
+  background: var(--accent);
 }
-.epf-intro-masthead h1 {
-  font-size: clamp(3rem, 2.15rem + 3.6vw, 5.4rem);
+
+.epf-introduction-signal span:nth-child(1) {
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.epf-introduction-signal span:nth-child(2) { height: 66%; }
+
+.epf-introduction-signal span:nth-child(3) {
+  height: 35%;
+  background: var(--accent-warm);
+}
+
+.epf-introduction-titleblock { min-width: 0; }
+
+.epf-introduction-head h1 {
+  max-width: 12ch;
+  font-size: clamp(3.25rem, 2.1rem + 5vw, 5.75rem);
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 0.94;
   letter-spacing: -0.035em;
 }
 
-/* --- The opening wall: the guiding statement, read first ----------------- */
-.epf-intro-opening {
-  margin-top: clamp(2.5rem, 7vw, 5rem);
+.epf-introduction-rule {
+  display: block;
+  width: min(100%, 14rem);
+  height: 0.22rem;
+  margin-top: clamp(1.1rem, 2.5vw, 1.75rem);
+  background: var(--ink);
 }
-.epf-intro-lede {
-  max-width: 44ch;
+
+.epf-introduction-opening {
+  max-width: 63rem;
+  margin-top: clamp(3rem, 8vw, 7.5rem);
+}
+
+.epf-introduction-opening p {
+  max-width: 56ch;
   font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 1.1rem + 1.05vw, 1.95rem);
+  font-size: clamp(1.45rem, 1.16rem + 1.18vw, 2.1rem);
   line-height: 1.5;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
   color: var(--ink);
   text-wrap: pretty;
 }
-.epf-intro-lede::first-letter {
+
+.epf-introduction-opening p::first-letter {
   float: left;
-  margin: 0.02em 0.12em -0.04em 0;
+  margin: 0.055em 0.13em 0 0;
   font-family: var(--font-sans);
-  font-size: 3.1em;
+  font-size: 3.15em;
   font-weight: 700;
-  line-height: 0.78;
+  line-height: 0.7;
   color: var(--accent);
 }
 
-/* --- The two lenses: aim + method, a staggered editorial pair ------------- */
-.epf-intro-lenses {
-  margin-top: clamp(3.5rem, 9vw, 6.5rem);
+.epf-introduction-passages {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: clamp(4.5rem, 11vw, 9rem);
+  margin-top: clamp(4.75rem, 12vw, 10rem);
+}
+
+.epf-introduction-passage {
+  --passage-tone: var(--accent);
+  --passage-ink: var(--accent-hover);
+  display: grid;
+  grid-template-columns: minmax(4rem, 1fr) minmax(0, 4fr);
+  column-gap: clamp(1.25rem, 4vw, 4rem);
   align-items: start;
 }
-.epf-intro-lens {
-  --lens-tone: var(--accent);
-  --lens-ink: var(--accent-hover);
-}
-.epf-intro-lens--green { --lens-tone: var(--accent-green); --lens-ink: var(--accent-green-hover); }
-.epf-intro-lens--blue { --lens-tone: var(--accent); --lens-ink: var(--accent-hover); }
-/* Push the second lens down for magazine rhythm, not a grid of equals. */
-.epf-intro-lens:nth-child(2) { margin-top: clamp(2rem, 6vw, 4.5rem); }
 
-.epf-intro-lens-rule {
-  display: block;
-  width: clamp(3rem, 8vw, 5rem);
-  height: 0.34rem;
-  margin-bottom: var(--space-lg);
-  border-radius: 999px;
-  background: var(--lens-tone);
+.epf-introduction-passage--green {
+  --passage-tone: var(--accent-green);
+  --passage-ink: var(--accent-green-hover);
 }
-.epf-intro-lens h2 {
-  max-width: 20ch;
-  font-family: var(--font-sans);
-  font-size: clamp(1.3rem, 1.1rem + 0.75vw, 1.9rem);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--lens-ink);
+
+.epf-introduction-passage-mark {
+  width: clamp(2.75rem, 6vw, 4.5rem);
+  height: clamp(5rem, 13vw, 8rem);
+  margin-top: 0.25rem;
+  background: var(--passage-tone);
+}
+
+.epf-introduction-passage-copy {
+  padding-top: clamp(0.45rem, 1vw, 0.85rem);
+  border-top: 1px solid color-mix(in srgb, var(--passage-tone) 50%, var(--border));
+}
+
+.epf-introduction-passage h2 {
+  max-width: 18ch;
+  font-size: clamp(1.65rem, 1.32rem + 1.1vw, 2.55rem);
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--passage-ink);
   text-wrap: balance;
 }
-.epf-intro-lens p {
-  max-width: 46ch;
+
+.epf-introduction-passage p {
+  max-width: 56ch;
   margin-top: var(--space-lg);
   font-family: var(--font-serif);
-  font-size: var(--text-lg);
-  line-height: 1.7;
+  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
+  line-height: 1.75;
   color: var(--ink);
   text-wrap: pretty;
 }
 
-/* --- Responsive ---------------------------------------------------------- */
+/* The second passage steps inward, creating a deliberate turn toward the
+   Community Engagement chapter without adding a duplicate navigation link. */
+.epf-introduction-passage--blue {
+  width: min(100%, 55rem);
+  justify-self: end;
+  grid-template-columns: minmax(0, 4fr) minmax(4rem, 1fr);
+}
+
+.epf-introduction-passage--blue .epf-introduction-passage-mark {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.epf-introduction-passage--blue .epf-introduction-passage-copy {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+}
+
+.epf-introduction-passage--blue h2,
+.epf-introduction-passage--blue p { margin-left: auto; }
+
 @media (max-width: 48rem) {
-  .epf-intro-lenses {
-    grid-template-columns: 1fr;
-    gap: clamp(2.5rem, 9vw, 4rem);
+  .epf-introduction { width: min(100%, 42rem); }
+
+  .epf-introduction-opening p { max-width: 48ch; }
+
+  .epf-introduction-passage,
+  .epf-introduction-passage--blue {
+    width: 100%;
+    grid-template-columns: minmax(2.5rem, 3.5rem) minmax(0, 1fr);
   }
-  .epf-intro-lens:nth-child(2) { margin-top: 0; }
-  .epf-intro-lens p { max-width: 62ch; }
+
+  .epf-introduction-passage--blue .epf-introduction-passage-mark {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .epf-introduction-passage--blue .epf-introduction-passage-copy {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .epf-introduction-passage--blue h2,
+  .epf-introduction-passage--blue p { margin-left: 0; }
 }
 
-@media (max-width: 28rem) {
-  .epf-intro-masthead h1 { font-size: clamp(2.7rem, 13vw, 3.6rem); }
-  .epf-intro-titlerow { gap: var(--space-md); }
-  .epf-intro-lede { font-size: clamp(1.25rem, 6vw, 1.5rem); }
+@media (max-width: 30rem) {
+  .epf-introduction-head { gap: var(--space-md); }
+
+  .epf-introduction-signal { gap: 0.22rem; }
+
+  .epf-introduction-opening p { font-size: clamp(1.28rem, 6vw, 1.55rem); }
+
+  .epf-introduction-passage,
+  .epf-introduction-passage--blue { grid-template-columns: 1fr; }
+
+  .epf-introduction-passage-mark,
+  .epf-introduction-passage--blue .epf-introduction-passage-mark {
+    grid-column: 1;
+    width: 3.5rem;
+    height: 0.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .epf-introduction-passage-copy,
+  .epf-introduction-passage--blue .epf-introduction-passage-copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
 
-/* --- Motion: a staged threshold entrance --------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
-  .epf-intro-masthead { animation: epf-rise 0.5s var(--ease-out) both; }
-  .epf-intro-opening { animation: epf-rise 0.55s 0.1s var(--ease-out) both; }
-  .epf-intro-lens { animation: epf-rise 0.55s var(--ease-out) both; }
-  .epf-intro-lens:nth-child(1) { animation-delay: 0.18s; }
-  .epf-intro-lens:nth-child(2) { animation-delay: 0.26s; }
+  .epf-introduction-head { animation: epf-rise 0.4s var(--ease-out) both; }
+  .epf-introduction-opening { animation: epf-rise 0.45s 0.08s var(--ease-out) both; }
+  .epf-introduction-passage { animation: epf-rise 0.45s var(--ease-out) both; }
+  .epf-introduction-passage--green { animation-delay: 0.14s; }
+  .epf-introduction-passage--blue { animation-delay: 0.2s; }
 }
