@@ -16,12 +16,12 @@ const inquiries: Inquiry[] = [
     voices: [
       {
         name: 'Zyrah',
-        tone: 'blue',
+        tone: 'rose',
         response: 'I learned that being human means showing love, patience, and compassion despite life’s challenges. The parents’ experiences reminded me that every person deserves respect, care, and acceptance regardless of their condition.',
       },
       {
         name: 'Zhaina',
-        tone: 'rose',
+        tone: 'blue',
         response: 'From the interviews, I learned that being human means showing love, patience, and understanding despite challenges. Both parents continuously supported and guided their children every day. Even when their children experienced bullying or had difficulty socializing, they never gave up on them. Their experiences showed that every person deserves care, respect, and acceptance regardless of their condition.',
       },
       {
@@ -36,12 +36,12 @@ const inquiries: Inquiry[] = [
     voices: [
       {
         name: 'Zyrah',
-        tone: 'blue',
+        tone: 'rose',
         response: 'The interviews showed that people with disabilities still experience bullying and discrimination. However, they also revealed that supportive families, teachers, classmates, and SPED programs can help them feel accepted and included.',
       },
       {
         name: 'Zhaina',
-        tone: 'rose',
+        tone: 'blue',
         response: 'The interviews revealed that people with disabilities still experience discrimination and bullying. One participant shared that her child was sometimes bullied, while another participant shared that her child experienced bullying in elementary school and even faced discrimination from teachers, which caused him to stop attending school. At the same time, the interviews also showed that there are people, classmates, teachers, and SPED programs that help children feel accepted and supported.',
       },
       {
@@ -56,12 +56,12 @@ const inquiries: Inquiry[] = [
     voices: [
       {
         name: 'Zyrah',
-        tone: 'blue',
+        tone: 'rose',
         response: 'Before the interview, I thought their biggest challenge was their disability. After listening to the participants, I realized that many of their struggles come from society’s lack of understanding and acceptance.',
       },
       {
         name: 'Zhaina',
-        tone: 'rose',
+        tone: 'blue',
         response: 'Before the interview, I thought that the main difficulty of people with disabilities was their condition itself. After listening to the parents, we realized that many of their struggles come from how some people treat them. I also realized that family support, patience, and an accepting environment can greatly improve their confidence and development.',
       },
       {
@@ -76,12 +76,12 @@ const inquiries: Inquiry[] = [
     voices: [
       {
         name: 'Zyrah',
-        tone: 'blue',
+        tone: 'rose',
         response: 'The interviews reflected human dignity by emphasizing equal respect for people with disabilities. Empathy was shown through the parents’ love and patience, freedom through opportunities to learn and grow, and transcendence through their perseverance despite difficulties.',
       },
       {
         name: 'Zhaina',
-        tone: 'rose',
+        tone: 'blue',
         response: 'The interviews showed human dignity because both parents emphasized that their children should never be treated as "less" or called hurtful names. They wanted others to make their children feel loved and valued. Empathy was shown through the parents patience, guidance, and understanding of their children\'s needs. Freedom was seen when the children were given opportunities to learn through SPED and continue developing at home with their parents support. Transcendence was shown in how the parents continued caring, teaching, and encouraging their children despite years of challenges, discrimination, and difficulties.',
       },
       {
@@ -96,12 +96,12 @@ const inquiries: Inquiry[] = [
     voices: [
       {
         name: 'Zyrah',
-        tone: 'blue',
+        tone: 'rose',
         response: 'Society can become more inclusive by preventing bullying and discrimination, promoting respect and acceptance, and strengthening inclusive education so people with disabilities are treated equally and given opportunities to thrive.',
       },
       {
         name: 'Zhaina',
-        tone: 'rose',
+        tone: 'blue',
         response: 'Based on the interviews, society can become more inclusive by avoiding bullying and discrimination, treating people with disabilities with respect, and making them feel accepted instead of different. Schools should continue promoting inclusive education like SPED and ensure that teachers and students understand how to support learners with disabilities. Families and communities should also continue showing patience, love, and guidance so that people with disabilities can feel valued and included.',
       },
       {
@@ -161,8 +161,8 @@ export function PhilosophicalReflectionPage() {
       </header>
 
       <div className="epf-philosophy-legend" aria-label="Student voice key">
-        <span className="epf-philosophy-legend--blue"><i aria-hidden="true" />Zyrah</span>
-        <span className="epf-philosophy-legend--rose"><i aria-hidden="true" />Zhaina</span>
+        <span className="epf-philosophy-legend--rose"><i aria-hidden="true" />Zyrah</span>
+        <span className="epf-philosophy-legend--blue"><i aria-hidden="true" />Zhaina</span>
         <span className="epf-philosophy-legend--green"><i aria-hidden="true" />Bowen</span>
       </div>
 

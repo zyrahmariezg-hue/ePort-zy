@@ -2,6 +2,10 @@ TITLE: The Lived Experiences of Persons with Disabilities: A Philosophical Refle
 Zyrah Mariez P. Grandeza
 Zhaina Jhazelle M. Morden
 Daniel Bowen N. Mutuc
+STUDENT COLOR ASSIGNMENTS:
+Zyrah: Pink
+Zhaina: Blue
+Bowen: Green
 12-Kelvin
 Philosophical
 July 14, 2026
