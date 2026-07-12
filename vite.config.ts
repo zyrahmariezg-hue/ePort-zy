@@ -5,7 +5,8 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
+  // GitHub Pages serves this project from /ePort-zy/, not the domain root.
+  base: '/ePort-zy/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
