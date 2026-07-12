@@ -1,0 +1,56 @@
+:root {
+  /* Ink (text) */
+  --ink: #1a1f2e;
+  --ink-secondary: #4a5068;
+  --ink-muted: #8891a5;
+
+  /* Surfaces */
+  --bg: #fafbfd;
+  --surface: #ffffff;
+  --surface-alt: #f3f5f9;
+
+  /* Borders */
+  --border: #e2e6ef;
+  --border-light: #edf0f6;
+
+  /* Accent — muted sage green */
+  --accent: #3d6b5e;
+  --accent-hover: #2f5649;
+  --accent-light: #eaf2ef;
+
+  /* Warm accent — terracotta (sparingly) */
+  --accent-warm: #b8704a;
+  --accent-warm-light: #faf0ea;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(26, 31, 46, 0.06);
+  --shadow-md: 0 4px 12px rgba(26, 31, 46, 0.08);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  --text-4xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-5xl: clamp(2.5rem, 1.75rem + 3vw, 4rem);
+
+  /* Nav height */
+  --nav-height: 4rem;
+}
