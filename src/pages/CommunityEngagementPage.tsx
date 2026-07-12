@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 /* All prose below is verbatim from docs/all-info.md ("COMMUNITY ENGAGEMENT",
    "The Research Process", "Ethical Conduct"). Wording, language, and order are
    preserved; only structural labels/headings frame the existing content. */
@@ -208,27 +206,6 @@ export function CommunityEngagementPage() {
         </div>
       </section>
 
-      <Link className="epf-ce-handoff" to="/interview-highlights" aria-label="Continue to Interview Highlights">
-        <div>
-          <p className="epf-ce-handoff-eyebrow">Next, in their own words</p>
-          <h2>Interview Highlights</h2>
-          <div className="epf-ce-handoff-voices">
-            {people.map((person) => (
-              <span className="epf-ce-voice" data-tone={person.tone} key={person.id}>
-                <span className="epf-ce-voice-mark" aria-hidden="true">
-                  <span />
-                  <span />
-                </span>
-                {person.label}
-              </span>
-            ))}
-          </div>
-        </div>
-        <span className="epf-ce-handoff-go" aria-hidden="true">
-          Read the highlights
-          <span>&rarr;</span>
-        </span>
-      </Link>
     </div>
   )
 }

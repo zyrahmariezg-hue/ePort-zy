@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Sidebar } from '@/components/navigation/Sidebar'
 import { MobileTopBar } from '@/components/navigation/MobileTopBar'
@@ -14,8 +14,24 @@ export function Layout() {
     currentIndex >= 0 && currentIndex < pages.length - 1 ? pages[currentIndex + 1] : null
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' })
-  }, [location.pathname])
+    const previous = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    return () => {
+      window.history.scrollRestoration = previous
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    // The global smooth-scroll rule is kept for same-page anchors. Override it
+    // only while resetting a newly mounted route, before the browser paints it.
+    const root = document.documentElement
+    const previousScrollBehavior = root.style.scrollBehavior
+
+    root.style.scrollBehavior = 'auto'
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    if (document.scrollingElement) document.scrollingElement.scrollTop = 0
+    root.style.scrollBehavior = previousScrollBehavior
+  }, [location.key])
 
   return (
     <div className="epf-shell">
