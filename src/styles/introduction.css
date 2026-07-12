@@ -1,0 +1,146 @@
+/* =========================================================================
+   Introduction — "The Foreword"
+
+   The threshold leaf between the Cover and the chapters. It reuses the Cover's
+   own devices — the three-voice seam and the listening VoiceMark — so turning
+   from the cover into the introduction reads as continuous, then hands the
+   reader a large opening statement followed by the two lenses (aim + method)
+   the project reads through. Green and blue carry the two lenses, each tied to
+   the chapter it belongs to (interview → green, philosophy → blue); rose
+   appears only in the structural seam, since the introduction holds no
+   personal content of its own.
+   ========================================================================= */
+
+.epf-intro {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+  padding-bottom: var(--space-xl);
+}
+
+/* --- Threshold masthead: the Cover's seam + voice mark, carried over ------ */
+.epf-intro-masthead {
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--border);
+}
+.epf-intro-seam {
+  display: block;
+  height: 0.4rem;
+  width: min(100%, 18rem);
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-green) 0 33.33%,
+    var(--accent) 33.33% 66.66%,
+    var(--accent-warm) 66.66% 100%
+  );
+}
+.epf-intro-titlerow {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+}
+.epf-intro-voicemark {
+  width: clamp(2.75rem, 7vw, 4rem);
+  height: auto;
+  flex: none;
+}
+.epf-intro-masthead h1 {
+  font-size: clamp(3rem, 2.15rem + 3.6vw, 5.4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+/* --- The opening wall: the guiding statement, read first ----------------- */
+.epf-intro-opening {
+  margin-top: clamp(2.5rem, 7vw, 5rem);
+}
+.epf-intro-lede {
+  max-width: 44ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 1.1rem + 1.05vw, 1.95rem);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.epf-intro-lede::first-letter {
+  float: left;
+  margin: 0.02em 0.12em -0.04em 0;
+  font-family: var(--font-sans);
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 0.78;
+  color: var(--accent);
+}
+
+/* --- The two lenses: aim + method, a staggered editorial pair ------------- */
+.epf-intro-lenses {
+  margin-top: clamp(3.5rem, 9vw, 6.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.epf-intro-lens {
+  --lens-tone: var(--accent);
+  --lens-ink: var(--accent-hover);
+}
+.epf-intro-lens--green { --lens-tone: var(--accent-green); --lens-ink: var(--accent-green-hover); }
+.epf-intro-lens--blue { --lens-tone: var(--accent); --lens-ink: var(--accent-hover); }
+/* Push the second lens down for magazine rhythm, not a grid of equals. */
+.epf-intro-lens:nth-child(2) { margin-top: clamp(2rem, 6vw, 4.5rem); }
+
+.epf-intro-lens-rule {
+  display: block;
+  width: clamp(3rem, 8vw, 5rem);
+  height: 0.34rem;
+  margin-bottom: var(--space-lg);
+  border-radius: 999px;
+  background: var(--lens-tone);
+}
+.epf-intro-lens h2 {
+  max-width: 20ch;
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 1.1rem + 0.75vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--lens-ink);
+  text-wrap: balance;
+}
+.epf-intro-lens p {
+  max-width: 46ch;
+  margin-top: var(--space-lg);
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 48rem) {
+  .epf-intro-lenses {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 9vw, 4rem);
+  }
+  .epf-intro-lens:nth-child(2) { margin-top: 0; }
+  .epf-intro-lens p { max-width: 62ch; }
+}
+
+@media (max-width: 28rem) {
+  .epf-intro-masthead h1 { font-size: clamp(2.7rem, 13vw, 3.6rem); }
+  .epf-intro-titlerow { gap: var(--space-md); }
+  .epf-intro-lede { font-size: clamp(1.25rem, 6vw, 1.5rem); }
+}
+
+/* --- Motion: a staged threshold entrance --------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .epf-intro-masthead { animation: epf-rise 0.5s var(--ease-out) both; }
+  .epf-intro-opening { animation: epf-rise 0.55s 0.1s var(--ease-out) both; }
+  .epf-intro-lens { animation: epf-rise 0.55s var(--ease-out) both; }
+  .epf-intro-lens:nth-child(1) { animation-delay: 0.18s; }
+  .epf-intro-lens:nth-child(2) { animation-delay: 0.26s; }
+}

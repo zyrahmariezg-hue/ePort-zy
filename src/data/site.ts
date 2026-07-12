@@ -20,9 +20,9 @@ export const coverMeta = {
   ],
   subject: 'Philosophy',
   gradeSection: '12–Kelvin',
-  teacher: '[Insert teacher name here]',
+  teacher: 'Kevin John Elchico',
   date: 'July 14, 2026',
-  schoolYear: '[Insert school year here]',
+  schoolYear: '2026–2027',
   // The three movements of the portfolio, each bound to its chapter color
   // (community → green, philosophical → blue, personal → rose). Notes are
   // faithful to docs/all-info.md — no invented facts.
