@@ -1,0 +1,224 @@
+.epf-interview {
+  width: min(100%, 56rem);
+  margin-inline: auto;
+  padding-bottom: var(--space-xl);
+}
+
+.epf-interview-masthead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.epf-interview-masthead h1 {
+  max-width: 9ch;
+  font-size: clamp(3rem, 2.15rem + 3.5vw, 5.25rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.epf-interview-masthead > div > p {
+  max-width: 48ch;
+  margin-top: var(--space-xl);
+  font-size: var(--text-lg);
+  line-height: 1.65;
+  color: var(--ink-secondary);
+}
+
+.epf-interview-masthead nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  min-width: 12.5rem;
+}
+
+.epf-interview-jump {
+  --jump-tone: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 44px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-secondary);
+  transition: color 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.epf-interview-jump--rose { --jump-tone: var(--accent-warm); }
+.epf-interview-jump--blue { --jump-tone: var(--accent); }
+.epf-interview-jump span {
+  width: 1.75rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--jump-tone);
+  transition: width 180ms var(--ease-out);
+}
+.epf-interview-jump:hover { color: var(--jump-tone); transform: translateX(0.2rem); }
+.epf-interview-jump:hover span { width: 2.25rem; }
+
+.epf-interview-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+  padding: var(--space-lg) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+.epf-interview-key span { display: inline-flex; align-items: center; gap: 0.55rem; }
+.epf-interview-key i { display: block; width: 1rem; height: 0.35rem; border-radius: 999px; }
+.epf-interview-key-quote { background: var(--accent-warm); }
+.epf-interview-key-context { background: var(--border); }
+.epf-interview-key-insight { background: var(--accent-green); }
+
+.epf-interview-track {
+  --track-tone: var(--accent);
+  --track-wash: var(--accent-light);
+  scroll-margin-top: calc(var(--nav-height) + var(--space-lg));
+  padding-top: clamp(3.5rem, 8vw, 7rem);
+}
+.epf-interview-track--rose { --track-tone: var(--accent-warm); --track-wash: var(--accent-warm-light); }
+.epf-interview-track--blue { --track-tone: var(--accent); --track-wash: var(--accent-light); }
+
+.epf-interview-track-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--track-tone);
+}
+.epf-interview-speaker-mark { display: grid; grid-template-columns: 0.55rem 0.55rem; gap: 0.35rem; align-items: end; height: 3.25rem; }
+.epf-interview-speaker-mark span { display: block; width: 100%; border-radius: 999px; background: var(--track-tone); }
+.epf-interview-speaker-mark span:first-child { height: 100%; }
+.epf-interview-speaker-mark span:last-child { height: 62%; opacity: 0.45; }
+.epf-interview-speaker-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--track-tone);
+}
+.epf-interview-track-head h2 { margin-top: 0.1rem; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem); }
+.epf-interview-count {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.epf-interview-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-xl) 0 clamp(2.5rem, 6vw, 5rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--track-wash) 62%, var(--surface));
+  border-radius: var(--radius-lg);
+}
+.epf-interview-summary p { font-size: var(--text-base); line-height: 1.75; color: var(--ink); }
+
+.epf-interview-moments { list-style: none; }
+.epf-interview-moment {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+.epf-interview-moment::before {
+  content: '';
+  position: absolute;
+  left: 1.45rem;
+  top: 2.15rem;
+  bottom: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--track-tone) 38%, var(--border));
+}
+.epf-interview-moment:last-child::before { display: none; }
+.epf-interview-moment > article { display: contents; }
+.epf-interview-moment-number {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  align-self: start;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--track-tone);
+  color: var(--surface);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.epf-interview-moment blockquote { grid-column: 2; max-width: 42rem; padding-top: 0.2rem; }
+.epf-interview-moment blockquote p {
+  max-width: 28ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 1.15rem + 1.2vw, 2.15rem);
+  font-weight: 550;
+  line-height: 1.38;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.epf-interview-reading {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: var(--space-xl);
+  max-width: 44rem;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+.epf-interview-reading h3 {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+.epf-interview-reading p { font-size: var(--text-base); line-height: 1.68; color: var(--ink-secondary); }
+.epf-interview-insight {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--accent-green-light);
+  border-radius: var(--radius-md);
+}
+.epf-interview-insight h3 { color: var(--accent-green-hover); }
+.epf-interview-insight p { color: var(--ink); }
+
+@media (max-width: 46rem) {
+  .epf-interview-masthead { grid-template-columns: 1fr; align-items: start; gap: var(--space-xl); }
+  .epf-interview-masthead nav { flex-direction: row; flex-wrap: wrap; gap: 0 var(--space-lg); }
+  .epf-interview-track-head { grid-template-columns: auto minmax(0, 1fr); }
+  .epf-interview-count { grid-column: 2; white-space: normal; }
+  .epf-interview-summary { grid-template-columns: 1fr; }
+  .epf-interview-reading { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 32rem) {
+  .epf-interview-masthead h1 { font-size: clamp(2.7rem, 13vw, 3.75rem); }
+  .epf-interview-key { gap: var(--space-sm) var(--space-lg); }
+  .epf-interview-moment { grid-template-columns: 2.75rem minmax(0, 1fr); }
+  .epf-interview-moment::before { left: 1rem; top: 1.8rem; }
+  .epf-interview-moment-number { width: 2.1rem; }
+  .epf-interview-reading { margin-left: calc(-2.75rem); margin-top: var(--space-lg); }
+  .epf-interview-insight { padding: var(--space-md); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .epf-interview-masthead { animation: epf-rise 0.5s var(--ease-out) both; }
+  .epf-interview-key { animation: epf-rise 0.5s 0.07s var(--ease-out) both; }
+  .epf-interview-track-head,
+  .epf-interview-summary { animation: epf-rise 0.5s 0.12s var(--ease-out) both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .epf-interview-jump,
+  .epf-interview-jump span { transition: none; }
+}
