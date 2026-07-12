@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { pages } from '@/data/navigation'
 import { siteMeta } from '@/data/site'
+import { NavigationList } from './NavigationList'
 
 export function MobileTopBar() {
   const [open, setOpen] = useState(false)
@@ -60,26 +60,9 @@ export function MobileTopBar() {
         className={`epf-drawer${open ? ' is-open' : ''}`}
         aria-label="Sections"
         aria-hidden={!open}
+        inert={!open}
       >
-        <ol className="epf-navlist">
-          {pages.map((page, i) => (
-            <li key={page.key}>
-              <NavLink
-                to={page.path}
-                end={page.path === '/'}
-                className="epf-navitem epf-navitem--drawer"
-                data-tone={i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'green' : 'rose'}
-                tabIndex={open ? 0 : -1}
-                onClick={close}
-              >
-                <span className="epf-navitem-num" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="epf-navitem-label">{page.label}</span>
-              </NavLink>
-            </li>
-          ))}
-        </ol>
+        <NavigationList drawer onNavigate={close} />
       </nav>
     </>
   )

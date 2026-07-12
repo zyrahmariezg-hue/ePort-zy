@@ -1,6 +1,6 @@
-import { Link, NavLink } from 'react-router-dom'
-import { pages } from '@/data/navigation'
+import { Link } from 'react-router-dom'
 import { siteMeta, coverMeta } from '@/data/site'
+import { NavigationList } from './NavigationList'
 
 export function Sidebar() {
   return (
@@ -16,23 +16,7 @@ export function Sidebar() {
       </Link>
 
       <nav aria-label="Sections">
-        <ol className="epf-navlist">
-          {pages.map((page, i) => (
-            <li key={page.key}>
-              <NavLink
-                to={page.path}
-                end={page.path === '/'}
-                className="epf-navitem"
-                data-tone={i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'green' : 'rose'}
-              >
-                <span className="epf-navitem-num" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="epf-navitem-label">{page.label}</span>
-              </NavLink>
-            </li>
-          ))}
-        </ol>
+        <NavigationList />
       </nav>
 
       <p className="epf-sidebar-foot">{coverMeta.date}</p>

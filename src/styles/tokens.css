@@ -67,10 +67,18 @@
 
   /* Easing — ease-out, no bounce */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 160ms;
+  --motion-standard: 240ms;
+
+  /* Scrollbars */
+  --scrollbar-track: var(--surface-alt);
+  --scrollbar-thumb: oklch(66% 0.035 258);
+  --scrollbar-thumb-hover: var(--ink-secondary);
 
   /* Z-index scale (semantic) */
   --z-sidebar: 30;
   --z-topbar: 40;
   --z-scrim: 45;
   --z-drawer: 50;
+  --z-skip-link: 60;
 }
