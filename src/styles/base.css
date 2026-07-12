@@ -2,6 +2,7 @@
 @import '@fontsource-variable/outfit';
 @import '@fontsource-variable/source-serif-4';
 @import './tokens.css';
+@import './shell.css';
 
 @layer base {
   *,
@@ -19,7 +20,7 @@
   }
 
   body {
-    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     font-size: var(--text-base);
     line-height: 1.7;
     color: var(--ink);
@@ -29,7 +30,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.2;
     text-wrap: balance;
     color: var(--ink);
@@ -84,7 +85,7 @@
     padding: var(--space-sm) var(--space-md);
     background: var(--accent);
     color: var(--surface);
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: var(--font-sans);
     font-size: var(--text-sm);
     border-radius: var(--radius-sm);
     transition: top 0.15s ease;
@@ -92,21 +93,5 @@
 
   .skip-link:focus {
     top: var(--space-sm);
-  }
-}
-
-/* Responsive navigation */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none !important;
-  }
-  .mobile-menu-button {
-    display: flex !important;
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-menu-button {
-    display: none !important;
   }
 }

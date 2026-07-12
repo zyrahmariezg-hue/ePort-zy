@@ -1,26 +1,32 @@
 :root {
-  /* Ink (text) */
-  --ink: #1a1f2e;
-  --ink-secondary: #4a5068;
-  --ink-muted: #8891a5;
+  /* Ink (text) — cool slate-blue, ties body copy to the accent hue */
+  --ink: oklch(24% 0.045 265);
+  --ink-secondary: oklch(40% 0.035 262);
+  --ink-muted: oklch(54.5% 0.028 258);
 
-  /* Surfaces */
-  --bg: #fafbfd;
+  /* Surfaces — cool near-white, not the cream/sand AI default */
+  --bg: oklch(98.5% 0.005 250);
   --surface: #ffffff;
-  --surface-alt: #f3f5f9;
+  --surface-alt: oklch(96.5% 0.010 250);
 
   /* Borders */
-  --border: #e2e6ef;
-  --border-light: #edf0f6;
+  --border: oklch(90% 0.014 255);
+  --border-light: oklch(94% 0.010 255);
 
-  /* Accent — muted sage green */
-  --accent: #3d6b5e;
-  --accent-hover: #2f5649;
-  --accent-light: #eaf2ef;
+  /* Accent — reflective blue (primary; philosophical reflection, links, nav) */
+  --accent: oklch(50% 0.155 258);
+  --accent-hover: oklch(40% 0.155 258);
+  --accent-light: oklch(94.5% 0.030 258);
 
-  /* Warm accent — terracotta (sparingly) */
-  --accent-warm: #b8704a;
-  --accent-warm-light: #faf0ea;
+  /* Accent — community green (secondary; community engagement) */
+  --accent-green: oklch(53% 0.135 152);
+  --accent-green-hover: oklch(42% 0.135 152);
+  --accent-green-light: oklch(94.5% 0.035 150);
+
+  /* Accent — personal rose (tertiary, "warm"; personal reflection, used sparingly) */
+  --accent-warm: oklch(55.5% 0.165 8);
+  --accent-warm-hover: oklch(43.5% 0.165 8);
+  --accent-warm-light: oklch(94.5% 0.035 12);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(26, 31, 46, 0.06);
@@ -51,6 +57,20 @@
   --text-4xl: clamp(2rem, 1.5rem + 2vw, 3rem);
   --text-5xl: clamp(2.5rem, 1.75rem + 3vw, 4rem);
 
-  /* Nav height */
+  /* Nav height + sidebar */
   --nav-height: 4rem;
+  --sidebar-width: 17rem;
+
+  /* Fonts — variable-font family names must match the installed @fontsource faces */
+  --font-sans: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  /* Easing — ease-out, no bounce */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Z-index scale (semantic) */
+  --z-sidebar: 30;
+  --z-topbar: 40;
+  --z-scrim: 45;
+  --z-drawer: 50;
 }

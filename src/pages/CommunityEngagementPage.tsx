@@ -42,6 +42,32 @@ export function CommunityEngagementPage() {
           <ImagePlaceholder label="Group Photo Placeholder" />
         </div>
       </Section>
+
+      <Section title="Community Impact">
+        <div
+          style={{
+            padding: 'var(--space-xl)',
+            border: '1px solid var(--accent-green)',
+            borderRadius: 'var(--radius-md)',
+            backgroundColor: 'var(--accent-green-light)',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Outfit', system-ui, sans-serif",
+              fontSize: 'var(--text-sm)',
+              fontWeight: 600,
+              color: 'var(--accent-green)',
+              marginBottom: 'var(--space-sm)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+            }}
+          >
+            Community Impact
+          </p>
+          <PlaceholderBlock label="[Insert what changed for the community, in the group's own words]" lines={3} />
+        </div>
+      </Section>
     </>
   )
 }
