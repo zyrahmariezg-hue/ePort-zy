@@ -26,14 +26,22 @@ export function CoverPage() {
 
   return (
     <section className="epf-cover" aria-labelledby="cover-title">
-      <p className="epf-cover-kicker">{kicker}</p>
-      <h1 id="cover-title" className="epf-cover-title">
-        {title}
-      </h1>
-      <p className="epf-cover-subtitle">{subtitle}</p>
+      <div className="epf-cover-composition" aria-hidden="true">
+        <span className="epf-cover-shape epf-cover-shape--blue" />
+        <span className="epf-cover-shape epf-cover-shape--green" />
+        <span className="epf-cover-shape epf-cover-shape--rose" />
+      </div>
 
-      <div className="epf-cover-rule" aria-hidden="true" />
-      <p className="epf-cover-theme">{theme}</p>
+      <div className="epf-cover-intro">
+        <p className="epf-cover-kicker">{kicker}</p>
+        <h1 id="cover-title" className="epf-cover-title">
+          {title}
+        </h1>
+        <p className="epf-cover-subtitle">{subtitle}</p>
+
+        <div className="epf-cover-rule" aria-hidden="true" />
+        <p className="epf-cover-theme">{theme}</p>
+      </div>
 
       <dl className="epf-cover-meta">
         <div className="epf-cover-field epf-cover-field--wide">

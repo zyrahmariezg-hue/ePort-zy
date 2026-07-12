@@ -23,6 +23,7 @@ export function Sidebar() {
                 to={page.path}
                 end={page.path === '/'}
                 className="epf-navitem"
+                data-tone={i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'green' : 'rose'}
               >
                 <span className="epf-navitem-num" aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}

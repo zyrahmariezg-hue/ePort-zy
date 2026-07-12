@@ -68,6 +68,7 @@ export function MobileTopBar() {
                 to={page.path}
                 end={page.path === '/'}
                 className="epf-navitem epf-navitem--drawer"
+                data-tone={i % 3 === 0 ? 'blue' : i % 3 === 1 ? 'green' : 'rose'}
                 tabIndex={open ? 0 : -1}
                 onClick={close}
               >
