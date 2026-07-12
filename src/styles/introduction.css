@@ -72,9 +72,9 @@
 .epf-introduction-opening p {
   max-width: 56ch;
   font-family: var(--font-serif);
-  font-size: clamp(1.45rem, 1.16rem + 1.18vw, 2.1rem);
-  line-height: 1.5;
-  letter-spacing: -0.008em;
+  font-size: clamp(1.18rem, 1.05rem + 0.52vw, 1.5rem);
+  line-height: 1.65;
+  letter-spacing: 0;
   color: var(--ink);
   text-wrap: pretty;
 }
@@ -135,7 +135,7 @@
   max-width: 56ch;
   margin-top: var(--space-lg);
   font-family: var(--font-serif);
-  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
+  font-size: clamp(1rem, 0.97rem + 0.16vw, 1.1rem);
   line-height: 1.75;
   color: var(--ink);
   text-wrap: pretty;
@@ -193,7 +193,7 @@
 
   .epf-introduction-signal { gap: 0.22rem; }
 
-  .epf-introduction-opening p { font-size: clamp(1.28rem, 6vw, 1.55rem); }
+  .epf-introduction-opening p { font-size: clamp(1.1rem, 5.2vw, 1.3rem); }
 
   .epf-introduction-passage,
   .epf-introduction-passage--blue { grid-template-columns: 1fr; }
