@@ -3,9 +3,9 @@ import { VoiceMark } from '@/components/cover/VoiceMark'
 
 const isPlaceholder = (value: string) => value.trimStart().startsWith('[')
 
-// Members share the three voice colors as an identity trio — a visual rhyme,
-// not a claim about who wrote which chapter.
-const memberTones = ['green', 'blue', 'rose'] as const
+// Each member's own voice color: Zyrah (rose), Zhaina (blue), Bowen (green).
+// Order matches the members array in coverMeta.
+const memberTones = ['rose', 'blue', 'green'] as const
 
 export function CoverPage() {
   const {
