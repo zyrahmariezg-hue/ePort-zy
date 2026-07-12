@@ -1,9 +1,15 @@
 import { coverMeta } from '@/data/site'
+import { VoiceMark } from '@/components/cover/VoiceMark'
 
 const isPlaceholder = (value: string) => value.trimStart().startsWith('[')
 
+// Members share the three voice colors as an identity trio — a visual rhyme,
+// not a claim about who wrote which chapter.
+const memberTones = ['green', 'blue', 'rose'] as const
+
 export function CoverPage() {
   const {
+    group,
     kicker,
     title,
     subtitle,
@@ -14,9 +20,10 @@ export function CoverPage() {
     teacher,
     date,
     schoolYear,
+    movements,
   } = coverMeta
 
-  const fields = [
+  const facts = [
     { label: 'Subject', value: subject },
     { label: 'Grade & Section', value: gradeSection },
     { label: 'Teacher', value: teacher },
@@ -26,43 +33,76 @@ export function CoverPage() {
 
   return (
     <section className="epf-cover" aria-labelledby="cover-title">
-      <div className="epf-cover-composition" aria-hidden="true">
-        <span className="epf-cover-shape epf-cover-shape--blue" />
-        <span className="epf-cover-shape epf-cover-shape--green" />
-        <span className="epf-cover-shape epf-cover-shape--rose" />
+      <VoiceMark className="epf-cover-backdrop" />
+
+      <span className="epf-cover-seam" aria-hidden="true" />
+
+      <header className="epf-cover-masthead">
+        <VoiceMark className="epf-cover-voicemark" />
+        <p className="epf-cover-imprint">
+          <span className="epf-cover-group">{group}</span>
+          <span className="epf-cover-imprint-dot" aria-hidden="true" />
+          <span className="epf-cover-imprint-kicker">{kicker}</span>
+        </p>
+      </header>
+
+      <div className="epf-cover-lockup">
+        <div className="epf-cover-headline">
+          <h1 id="cover-title" className="epf-cover-title">
+            {title}
+          </h1>
+          <p className="epf-cover-subtitle">{subtitle}</p>
+          <p className="epf-cover-theme">{theme}</p>
+        </div>
+
+        <ol className="epf-cover-index" aria-label="The three movements of this portfolio">
+          {movements.map((movement) => (
+            <li
+              key={movement.title}
+              className="epf-cover-movement"
+              data-tone={movement.tone}
+            >
+              <span className="epf-cover-movement-index" aria-hidden="true">
+                {movement.index}
+              </span>
+              <span className="epf-cover-movement-body">
+                <span className="epf-cover-movement-title">{movement.title}</span>
+                <span className="epf-cover-movement-note">{movement.note}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
       </div>
 
-      <div className="epf-cover-intro">
-        <p className="epf-cover-kicker">{kicker}</p>
-        <h1 id="cover-title" className="epf-cover-title">
-          {title}
-        </h1>
-        <p className="epf-cover-subtitle">{subtitle}</p>
-
-        <div className="epf-cover-rule" aria-hidden="true" />
-        <p className="epf-cover-theme">{theme}</p>
-      </div>
-
-      <dl className="epf-cover-meta">
-        <div className="epf-cover-field epf-cover-field--wide">
+      <dl className="epf-cover-colophon">
+        <div className="epf-cover-authors">
           <dt>Group Members</dt>
           <dd>
             <ul className="epf-cover-members">
-              {members.map((name) => (
-                <li key={name}>{name}</li>
+              {members.map((name, i) => (
+                <li key={name} className="epf-cover-member">
+                  <span
+                    className="epf-cover-member-tick"
+                    data-tone={memberTones[i % memberTones.length]}
+                    aria-hidden="true"
+                  />
+                  {name}
+                </li>
               ))}
             </ul>
           </dd>
         </div>
 
-        {fields.map((field) => (
-          <div className="epf-cover-field" key={field.label}>
-            <dt>{field.label}</dt>
-            <dd className={isPlaceholder(field.value) ? 'is-placeholder' : undefined}>
-              {field.value}
-            </dd>
-          </div>
-        ))}
+        <div className="epf-cover-facts">
+          {facts.map((fact) => (
+            <div className="epf-cover-fact" key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd className={isPlaceholder(fact.value) ? 'is-placeholder' : undefined}>
+                {fact.value}
+              </dd>
+            </div>
+          ))}
+        </div>
       </dl>
     </section>
   )

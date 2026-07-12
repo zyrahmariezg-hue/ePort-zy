@@ -3,6 +3,7 @@
 @import '@fontsource-variable/source-serif-4';
 @import './tokens.css';
 @import './shell.css';
+@import './cover.css';
 
 @layer base {
   *,
