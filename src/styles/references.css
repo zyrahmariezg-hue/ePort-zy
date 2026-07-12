@@ -1,0 +1,122 @@
+.epf-references {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+  padding-bottom: var(--space-xl);
+}
+
+.epf-references-masthead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-xl) clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--border);
+}
+.epf-references-masthead > div:nth-child(2) > p,
+.epf-references-bibliography header p {
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+.epf-references-masthead h1 {
+  font-size: clamp(3rem, 2.15rem + 3.6vw, 5.4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.epf-references-masthead > p {
+  grid-column: 2;
+  max-width: 55ch;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--ink-secondary);
+}
+.epf-references-mark {
+  display: grid;
+  grid-template-columns: repeat(3, 0.68rem);
+  align-items: end;
+  gap: 0.45rem;
+  height: 4.25rem;
+}
+.epf-references-mark span { display: block; width: 100%; border-radius: 999px; }
+.epf-references-mark span:nth-child(1) { height: 42%; background: var(--accent-warm); }
+.epf-references-mark span:nth-child(2) { height: 74%; background: var(--accent); }
+.epf-references-mark span:nth-child(3) { height: 100%; background: var(--accent-green); }
+
+.epf-references-bibliography { margin-top: clamp(3rem, 8vw, 7rem); }
+.epf-references-bibliography > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--ink);
+}
+.epf-references-bibliography h2 {
+  font-size: clamp(1.85rem, 1.55rem + 1vw, 2.6rem);
+  letter-spacing: -0.025em;
+}
+.epf-references-bibliography header > span {
+  padding-bottom: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.epf-references-bibliography ol { list-style: none; }
+.epf-references-bibliography li {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  padding: clamp(1.75rem, 4vw, 2.75rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+.epf-references-bibliography li > span {
+  padding-top: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.epf-references-bibliography li p {
+  max-width: 65ch;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  font-size: clamp(1.1rem, 1.02rem + 0.3vw, 1.25rem);
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.epf-references-note {
+  display: grid;
+  grid-template-columns: 0.65rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  max-width: 46rem;
+  margin: clamp(3rem, 7vw, 6rem) 0 0 auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+.epf-references-note > span { display: block; width: 0.65rem; min-height: 2.5rem; border-radius: 999px; background: var(--accent-warm); }
+.epf-references-note p { max-width: 60ch; font-size: var(--text-base); line-height: 1.7; color: var(--ink-secondary); }
+
+@media (max-width: 42rem) {
+  .epf-references-masthead { grid-template-columns: 1fr; align-items: start; }
+  .epf-references-masthead > p { grid-column: 1; }
+  .epf-references-bibliography > header { align-items: start; flex-direction: column; gap: var(--space-sm); }
+  .epf-references-bibliography header > span { padding-bottom: 0; }
+}
+
+@media (max-width: 28rem) {
+  .epf-references-masthead h1 { font-size: clamp(2.7rem, 13vw, 3.6rem); }
+  .epf-references-bibliography li { grid-template-columns: 2.5rem minmax(0, 1fr); gap: var(--space-sm); }
+  .epf-references-bibliography li p { padding-left: 1.1rem; text-indent: -1.1rem; }
+  .epf-references-note { gap: var(--space-md); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .epf-references-masthead { animation: epf-rise 0.45s var(--ease-out) both; }
+  .epf-references-bibliography { animation: epf-rise 0.45s 0.08s var(--ease-out) both; }
+}
