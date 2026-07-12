@@ -1,5 +1,3 @@
-import { PageHeader } from '@/components/ui/PageHeader'
-
 // Content is verbatim from docs/all-info.md (Introduction section). Do not edit wording.
 const lede =
   'It is easy to form opinions about persons with disabilities (PWDs) based on what we see or hear, yet these assumptions rarely reflect the realities of their everyday lives. This interview portfolio serves as an opportunity to move beyond those surface-level perceptions by listening to the firsthand experiences of a person with a disability. Through their story, we hope to better understand the challenges they face, the resilience they demonstrate, and the importance of creating a society that values inclusion, dignity, and equal opportunities. More than simply gathering information, this portfolio encourages reflection on how genuine understanding begins by listening to the voices of those whose experiences are often overlooked.'
@@ -22,18 +20,39 @@ const briefs = [
 export function IntroductionPage() {
   return (
     <div className="epf-intro">
-      <PageHeader title="Introduction" />
+      <header className="epf-intro-masthead">
+        <div className="epf-intro-masthead-mark" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <h1>Introduction</h1>
+      </header>
 
-      <p className="epf-intro-lede">{lede}</p>
+      <section className="epf-intro-opening" aria-label="Introduction overview">
+        <div className="epf-intro-opening-accent" aria-hidden="true">
+          <span className="epf-intro-opening-dot epf-intro-opening-dot--blue" />
+          <span className="epf-intro-opening-dot epf-intro-opening-dot--green" />
+          <span className="epf-intro-opening-dot epf-intro-opening-dot--rose" />
+        </div>
+        <p className="epf-intro-lede">{lede}</p>
+      </section>
 
-      <div className="epf-intro-brief">
-        {briefs.map((brief) => (
-          <section className={`epf-intro-row epf-intro-row--${brief.tone}`} key={brief.label}>
-            <h2 className="epf-intro-row-label">{brief.label}</h2>
-            <p className="epf-intro-row-body">{brief.body}</p>
-          </section>
+      <ol className="epf-intro-path" aria-label="Introduction reading path">
+        {briefs.map((brief, index) => (
+          <li className={`epf-intro-step epf-intro-step--${brief.tone}`} key={brief.label}>
+            <article>
+              <div className="epf-intro-step-heading">
+                <span className="epf-intro-step-count" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h2>{brief.label}</h2>
+              </div>
+              <p>{brief.body}</p>
+            </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   )
 }
