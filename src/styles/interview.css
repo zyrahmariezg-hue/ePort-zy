@@ -210,7 +210,8 @@
   .epf-interview-moment { grid-template-columns: 2.75rem minmax(0, 1fr); }
   .epf-interview-moment::before { left: 1rem; top: 1.8rem; }
   .epf-interview-moment-number { width: 2.1rem; }
-  .epf-interview-reading { margin-left: calc(-2.75rem); margin-top: var(--space-lg); }
+  /* Keep the Context/Insight stack clear of the numbered timeline rail. */
+  .epf-interview-reading { margin-left: 0; margin-top: var(--space-lg); }
   .epf-interview-insight { padding: var(--space-md); }
 }
 
