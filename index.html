@@ -12,6 +12,18 @@
     <meta property="og:title" content="The Lived Experiences of Persons with Disabilities" />
     <meta property="og:description" content="A Philosophy ePortfolio by PETA Group." />
     <meta property="og:url" content="https://roja-projects-only.github.io/ePort-zy/" />
+    <script>
+      // Ensure trailing slash for GitHub Pages subpath.
+      // Without this, relative asset paths break when the user visits
+      // /ePort-zy instead of /ePort-zy/.
+      (function () {
+        var path = window.location.pathname;
+        var base = '/ePort-zy';
+        if (path === base) {
+          window.location.replace(base + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
