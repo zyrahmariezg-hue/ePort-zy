@@ -1,3 +1,5 @@
+import { publicAsset } from '@/data/assets'
+
 /* All prose below is verbatim from docs/all-info.md ("COMMUNITY ENGAGEMENT",
    "The Research Process", "Ethical Conduct"). Wording, language, and order are
    preserved; only structural labels/headings frame the existing content. */
@@ -13,6 +15,8 @@ type Person = {
   label: string
   name: string
   body: string
+  image: string
+  imageAlt: string
 }
 
 const people: Person[] = [
@@ -22,6 +26,8 @@ const people: Person[] = [
     label: 'Parent Participant 01',
     name: 'A mother and her daughter',
     body: 'She is a mother with a daughter who has autism. Her child requires constant care and attention, as she cannot be left unattended. The mother makes sure to provide the support and guidance her child needs in their daily life.',
+    image: 'participant-1.jpg',
+    imageAlt: 'Hands signing a paper during the interview documentation process',
   },
   {
     id: 'participant-02',
@@ -29,6 +35,8 @@ const people: Person[] = [
     label: 'Parent Participant 02',
     name: 'A mother and her son',
     body: 'She is also a mother with a son who has Autism Spectrum Disorder. Her child is able to understand things, but he still requires constant care, guidance, and continuous teaching to support his development and daily activities.',
+    image: 'participant-2.jpg',
+    imageAlt: 'Hands holding a signed paper during the interview documentation process',
   },
 ]
 
@@ -142,18 +150,30 @@ export function CommunityEngagementPage() {
         <div className="epf-ce-people">
           {people.map((person) => (
             <article className="epf-ce-person" data-tone={person.tone} key={person.id}>
-              <header className="epf-ce-person-head">
-                <PresenceMark className="epf-ce-presence" />
-                <div>
-                  <p className="epf-ce-person-id">{person.label}</p>
-                  <p className="epf-ce-person-name">{person.name}</p>
-                </div>
-              </header>
-              <p className="epf-ce-person-body">{person.body}</p>
-              <p className="epf-ce-person-tag">
-                <ShieldIcon />
-                Identity kept confidential
-              </p>
+              <figure className="epf-ce-person-media">
+                <img
+                  src={publicAsset(person.image)}
+                  width="1536"
+                  height="2048"
+                  loading="lazy"
+                  decoding="async"
+                  alt={person.imageAlt}
+                />
+              </figure>
+              <div className="epf-ce-person-record">
+                <header className="epf-ce-person-head">
+                  <PresenceMark className="epf-ce-presence" />
+                  <div>
+                    <p className="epf-ce-person-id">{person.label}</p>
+                    <p className="epf-ce-person-name">{person.name}</p>
+                  </div>
+                </header>
+                <p className="epf-ce-person-body">{person.body}</p>
+                <p className="epf-ce-person-tag">
+                  <ShieldIcon />
+                  Identity kept confidential
+                </p>
+              </div>
             </article>
           ))}
         </div>
@@ -181,6 +201,7 @@ export function CommunityEngagementPage() {
             </li>
           ))}
         </ol>
+
       </section>
 
       <section className="epf-ce-section" aria-labelledby="ce-ethos-title">
