@@ -1,4 +1,5 @@
 import '@/styles/personal.css'
+import { publicAsset } from '@/data/assets'
 
 type ReflectionEntry = {
   title: string
@@ -7,6 +8,8 @@ type ReflectionEntry = {
 
 type Reflection = {
   name: 'Zyrah' | 'Zhaina' | 'Bowen'
+  fullName: string
+  portrait: string
   tone: 'rose' | 'blue' | 'green'
   entries: ReflectionEntry[]
 }
@@ -15,6 +18,8 @@ type Reflection = {
 const reflections: Reflection[] = [
   {
     name: 'Zyrah',
+    fullName: 'Zyrah Mariez P. Grandeza',
+    portrait: 'zyrah.png',
     tone: 'rose',
     entries: [
       {
@@ -33,6 +38,8 @@ const reflections: Reflection[] = [
   },
   {
     name: 'Zhaina',
+    fullName: 'Zhaina Jhazelle M. Morden',
+    portrait: 'zhaina.png',
     tone: 'blue',
     entries: [
       {
@@ -51,6 +58,8 @@ const reflections: Reflection[] = [
   },
   {
     name: 'Bowen',
+    fullName: 'Daniel Bowen N. Mutuc',
+    portrait: 'bowen.png',
     tone: 'green',
     entries: [
       {
@@ -81,7 +90,16 @@ function ReflectionJournal({ reflection, index }: { reflection: Reflection; inde
           <p>Personal reflection</p>
           <h2 id={`reflection-${reflection.name.toLowerCase()}`}>{reflection.name}</h2>
         </div>
-        <i aria-hidden="true" />
+        <figure className="epf-personal-portrait">
+          <img
+            src={publicAsset(reflection.portrait)}
+            width="300"
+            height="300"
+            loading="lazy"
+            decoding="async"
+            alt={`Portrait of ${reflection.fullName}`}
+          />
+        </figure>
       </header>
 
       <div className="epf-personal-entries">

@@ -106,7 +106,21 @@
   color: var(--journal-tone);
 }
 .epf-personal-journal-head h2 { font-size: clamp(2rem, 1.6rem + 1.5vw, 3rem); }
-.epf-personal-journal-head i { width: clamp(3.5rem, 8vw, 6rem); height: 0.5rem; border-radius: 999px; background: var(--journal-tone); }
+.epf-personal-portrait {
+  display: grid;
+  place-items: end center;
+  width: clamp(4.75rem, 10vw, 7.5rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--journal-wash);
+}
+.epf-personal-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
 
 .epf-personal-entries { display: grid; gap: clamp(2.5rem, 6vw, 5rem); }
 .epf-personal-entry {
@@ -152,7 +166,7 @@
   .epf-personal-masthead > p { grid-column: 1; }
   .epf-personal-index { justify-content: flex-start; }
   .epf-personal-journal-head { grid-template-columns: auto minmax(0, 1fr); }
-  .epf-personal-journal-head i { display: none; }
+  .epf-personal-portrait { width: clamp(4.25rem, 16vw, 5.5rem); }
   .epf-personal-entry { grid-template-columns: 2.75rem minmax(0, 1fr); gap: var(--space-md); }
   .epf-personal-entry p { font-size: var(--text-base); }
   .epf-personal-journal--rose .epf-personal-entry:nth-child(2),
