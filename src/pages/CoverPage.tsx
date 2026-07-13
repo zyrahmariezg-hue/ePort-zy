@@ -1,11 +1,21 @@
 import { coverMeta } from '@/data/site'
 import { VoiceMark } from '@/components/cover/VoiceMark'
+import { publicAsset } from '@/data/assets'
 
 const isPlaceholder = (value: string) => value.trimStart().startsWith('[')
 
 // Each member's own voice color: Zyrah (rose), Zhaina (blue), Bowen (green).
 // Order matches the members array in coverMeta.
 const memberTones = ['rose', 'blue', 'green'] as const
+
+// These portrait pairings follow the supplied image set and the exact member
+// order verified in docs/all-info.md. Keeping them beside the cover composition
+// makes the association explicit rather than inferring it from filenames at render time.
+const memberPortraits = [
+  { filename: 'zyrah.png', alt: 'Portrait of Zyrah Mariez P. Grandeza' },
+  { filename: 'zhaina.png', alt: 'Portrait of Zhaina Jhazelle M. Morden' },
+  { filename: 'bowen.png', alt: 'Portrait of Daniel Bowen N. Mutuc' },
+] as const
 
 export function CoverPage() {
   const {
@@ -72,27 +82,43 @@ export function CoverPage() {
             </li>
           ))}
         </ol>
+
+        <section className="epf-cover-contributors" aria-labelledby="cover-contributors-title">
+          <div className="epf-cover-contributors-heading">
+            <p id="cover-contributors-title">Group Members</p>
+            <span aria-hidden="true">Three voices, one listening practice</span>
+          </div>
+          <ol className="epf-cover-portraits">
+            {members.map((name, i) => {
+              const portrait = memberPortraits[i]
+              const tone = memberTones[i % memberTones.length]
+
+              return (
+                <li key={name} className="epf-cover-portrait" data-tone={tone}>
+                  <figure>
+                    <div className="epf-cover-portrait-image">
+                      <img
+                        src={publicAsset(portrait.filename)}
+                        alt={portrait.alt}
+                        width="300"
+                        height="300"
+                      />
+                    </div>
+                    <figcaption>
+                      <span className="epf-cover-portrait-number" aria-hidden="true">
+                        0{i + 1}
+                      </span>
+                      <span>{name}</span>
+                    </figcaption>
+                  </figure>
+                </li>
+              )
+            })}
+          </ol>
+        </section>
       </div>
 
       <dl className="epf-cover-colophon">
-        <div className="epf-cover-authors">
-          <dt>Group Members</dt>
-          <dd>
-            <ul className="epf-cover-members">
-              {members.map((name, i) => (
-                <li key={name} className="epf-cover-member">
-                  <span
-                    className="epf-cover-member-tick"
-                    data-tone={memberTones[i % memberTones.length]}
-                    aria-hidden="true"
-                  />
-                  {name}
-                </li>
-              ))}
-            </ul>
-          </dd>
-        </div>
-
         <div className="epf-cover-facts">
           {facts.map((fact) => (
             <div className="epf-cover-fact" key={fact.label}>
