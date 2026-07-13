@@ -134,6 +134,7 @@ function ParticipantTrack({ participant }: { participant: Participant }) {
     <section
       className={`epf-interview-track epf-interview-track--${participant.tone}`}
       id={participant.id}
+      tabIndex={-1}
       aria-labelledby={`${participant.id}-title`}
     >
       <header className="epf-interview-track-head">
@@ -162,6 +163,12 @@ function ParticipantTrack({ participant }: { participant: Participant }) {
 }
 
 export function InterviewHighlightsPage() {
+  const focusParticipant = (id: string) => {
+    const section = document.getElementById(id)
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    section?.focus({ preventScroll: true })
+  }
+
   return (
     <div className="epf-interview">
       <header className="epf-interview-masthead">
@@ -174,10 +181,15 @@ export function InterviewHighlightsPage() {
         </div>
         <nav aria-label="Interview participants">
           {participants.map((participant) => (
-            <a className={`epf-interview-jump epf-interview-jump--${participant.tone}`} href={`#${participant.id}`} key={participant.id}>
+            <button
+              type="button"
+              className={`epf-interview-jump epf-interview-jump--${participant.tone}`}
+              onClick={() => focusParticipant(participant.id)}
+              key={participant.id}
+            >
               <span aria-hidden="true" />
               {participant.label}
-            </a>
+            </button>
           ))}
         </nav>
       </header>

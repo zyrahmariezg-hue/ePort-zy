@@ -217,7 +217,7 @@
   gap: var(--space-md);
   margin-bottom: var(--space-md);
 }
-.epf-cover-contributors-heading p,
+.epf-cover-contributors-heading h2,
 .epf-cover-contributors-heading span {
   max-width: none;
   font-family: var(--font-sans);
@@ -226,7 +226,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.epf-cover-contributors-heading p { color: var(--ink-secondary); }
+.epf-cover-contributors-heading h2 { color: var(--ink-secondary); }
 .epf-cover-contributors-heading span {
   color: var(--ink-muted);
   font-weight: 500;

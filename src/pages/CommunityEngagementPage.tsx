@@ -165,7 +165,7 @@ export function CommunityEngagementPage() {
                   <PresenceMark className="epf-ce-presence" />
                   <div>
                     <p className="epf-ce-person-id">{person.label}</p>
-                    <p className="epf-ce-person-name">{person.name}</p>
+                    <h3 className="epf-ce-person-name">{person.name}</h3>
                   </div>
                 </header>
                 <p className="epf-ce-person-body">{person.body}</p>

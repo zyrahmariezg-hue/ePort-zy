@@ -43,6 +43,9 @@
   align-items: center;
   gap: 0.7rem;
   min-height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 600;

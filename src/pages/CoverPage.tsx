@@ -85,7 +85,7 @@ export function CoverPage() {
 
         <section className="epf-cover-contributors" aria-labelledby="cover-contributors-title">
           <div className="epf-cover-contributors-heading">
-            <p id="cover-contributors-title">Group Members</p>
+            <h2 id="cover-contributors-title">Group Members</h2>
             <span aria-hidden="true">Three voices, one listening practice</span>
           </div>
           <ol className="epf-cover-portraits">

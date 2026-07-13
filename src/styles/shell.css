@@ -288,8 +288,8 @@
   text-wrap: balance;
 }
 
-@media (max-width: 30rem) {
-  /* stack page-turn on the smallest screens so labels don't cramp */
+@media (max-width: 40rem) {
+  /* Keep the page-turn labels comfortably readable through narrow tablets. */
   .epf-pageturn-links {
     grid-template-columns: 1fr;
   }

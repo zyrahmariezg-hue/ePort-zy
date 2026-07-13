@@ -51,18 +51,21 @@
   gap: var(--space-sm) var(--space-xl);
   padding: var(--space-lg) 0;
 }
-.epf-personal-index a {
+.epf-personal-index button {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   min-height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--ink-secondary);
   transition: color 180ms var(--ease-out), transform 180ms var(--ease-out);
 }
-.epf-personal-index a:hover { color: var(--ink); transform: translateY(-0.1rem); }
+.epf-personal-index button:hover { color: var(--ink); transform: translateY(-0.1rem); }
 .epf-personal-index-mark { width: 0.65rem; aspect-ratio: 1; border-radius: 50%; }
 .epf-personal-index-mark--rose { background: var(--accent-warm); }
 .epf-personal-index-mark--blue { background: var(--accent); }

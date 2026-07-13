@@ -81,14 +81,16 @@ const reflections: Reflection[] = [
 function ReflectionJournal({ reflection, index }: { reflection: Reflection; index: number }) {
   return (
     <section
+      id={`reflection-${reflection.name.toLowerCase()}`}
+      tabIndex={-1}
       className={`epf-personal-journal epf-personal-journal--${reflection.tone}`}
-      aria-labelledby={`reflection-${reflection.name.toLowerCase()}`}
+      aria-labelledby={`reflection-heading-${reflection.name.toLowerCase()}`}
     >
       <header className="epf-personal-journal-head">
         <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
         <div>
           <p>Personal reflection</p>
-          <h2 id={`reflection-${reflection.name.toLowerCase()}`}>{reflection.name}</h2>
+          <h2 id={`reflection-heading-${reflection.name.toLowerCase()}`}>{reflection.name}</h2>
         </div>
         <figure className="epf-personal-portrait">
           <img
@@ -120,6 +122,12 @@ function ReflectionJournal({ reflection, index }: { reflection: Reflection; inde
 }
 
 export function PersonalReflectionPage() {
+  const focusReflection = (id: string) => {
+    const section = document.getElementById(id)
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    section?.focus({ preventScroll: true })
+  }
+
   return (
     <div className="epf-personal">
       <header className="epf-personal-masthead">
@@ -140,10 +148,14 @@ export function PersonalReflectionPage() {
 
       <nav className="epf-personal-index" aria-label="Personal reflections">
         {reflections.map((reflection) => (
-          <a href={`#reflection-${reflection.name.toLowerCase()}`} key={reflection.name}>
+          <button
+            type="button"
+            onClick={() => focusReflection(`reflection-${reflection.name.toLowerCase()}`)}
+            key={reflection.name}
+          >
             <span className={`epf-personal-index-mark epf-personal-index-mark--${reflection.tone}`} aria-hidden="true" />
             {reflection.name}
-          </a>
+          </button>
         ))}
       </nav>
 
