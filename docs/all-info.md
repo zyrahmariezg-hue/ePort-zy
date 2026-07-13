@@ -361,7 +361,7 @@ The interviews revealed that people with disabilities still experience discrimin
 3. How did this experience challenge your previous beliefs?
 Before the interview, I thought that the main difficulty of people with disabilities was their condition itself. After listening to the parents, we realized that many of their struggles come from how some people treat them. I also realized that family support, patience, and an accepting environment can greatly improve their confidence and development.
 4. How does the experience relate to human dignity, freedom, empathy, and transcendence?
-The interviews showed human dignity because both parents emphasized that their children should never be treated as "less" or called hurtful names. They wanted others to make their children feel loved and valued. Empathy was shown through the parents patience, guidance, and understanding of their children's needs. Freedom was seen when the children were given opportunities to learn through SPED and continue developing at home with their parents support. Transcendence was shown in how the parents continued caring, teaching, and encouraging their children despite years of challenges, discrimination, and difficulties.
+The interviews showed human dignity because both parents emphasized that their children should never be treated as "less" or called hurtful names. They wanted others to make their children feel loved and valued. Empathy was shown through the parents' patience, guidance, and understanding of their children's needs. Freedom was seen when the children were given opportunities to learn through SPED and continue developing at home with their parents' support. Transcendence was shown in how the parents continued caring, teaching, and encouraging their children despite years of challenges, discrimination, and difficulties.
 5. How can society become more inclusive?
 Based on the interviews, society can become more inclusive by avoiding bullying and discrimination, treating people with disabilities with respect, and making them feel accepted instead of different. Schools should continue promoting inclusive education like SPED and ensure that teachers and students understand how to support learners with disabilities. Families and communities should also continue showing patience, love, and guidance so that people with disabilities can feel valued and included.
 
@@ -407,7 +407,10 @@ The interview helped me realize that love, patience, and acceptance from family 
 3. What concrete actions you will take to promote inclusion.
  I will treat people with special needs with respect, avoid judging them because of their condition, speak up against bullying and discrimination, and encourage others to be more understanding and accepting of everyone.
 
-CONCLUSION
+Conclusion
+
+This e-portfolio represents our shared learning journey, highlighting the knowledge, skills, and experiences we gained throughout our academic work. Each project and activity included in this portfolio reflects our teamwork, dedication, and commitment to producing meaningful outputs while overcoming challenges together. Through this experience, we not only strengthened our understanding of the lessons but also developed important values such as collaboration, responsibility, communication, and perseverance. As we continue our academic journey, we will carry these lessons and experiences with us as we strive to grow, improve, and achieve our future goals. Overall, this e-portfolio stands as a reflection of our collective efforts and continuous pursuit of learning and excellence.
+
 Primary sources:
 Parent Participant 01. (2026, July 8). Interview on the lived experience of a child with a disability [Personal communication].
 Parent Participant 02. (2026, July 8). Interview on the lived experience of a child with a disability [Personal communication].

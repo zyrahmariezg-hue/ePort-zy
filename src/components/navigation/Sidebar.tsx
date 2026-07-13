@@ -5,7 +5,7 @@ import { NavigationList } from './NavigationList'
 export function Sidebar() {
   return (
     <aside className="epf-sidebar" aria-label="Portfolio contents">
-      <Link to="/" className="epf-brand" aria-label={`${siteMeta.wordmark} — home`}>
+      <Link to="/" className="epf-brand" aria-label={`${siteMeta.wordmark} - home`}>
         <span className="epf-brand-mark" aria-hidden="true" />
         <span className="epf-brand-text">
           <span className="epf-brand-name">{siteMeta.wordmark}</span>

@@ -43,7 +43,7 @@ export const coverMeta = {
       tone: 'rose',
       index: '03',
       title: 'Personal Reflection',
-      note: 'Our own assumptions — and what changed once we listened.',
+      note: 'Our own assumptions, and what changed once we listened.',
     },
   ],
 } as const

@@ -82,7 +82,7 @@ const inquiries: Inquiry[] = [
       {
         name: 'Zhaina',
         tone: 'blue',
-        response: 'The interviews showed human dignity because both parents emphasized that their children should never be treated as "less" or called hurtful names. They wanted others to make their children feel loved and valued. Empathy was shown through the parents patience, guidance, and understanding of their children\'s needs. Freedom was seen when the children were given opportunities to learn through SPED and continue developing at home with their parents support. Transcendence was shown in how the parents continued caring, teaching, and encouraging their children despite years of challenges, discrimination, and difficulties.',
+        response: 'The interviews showed human dignity because both parents emphasized that their children should never be treated as "less" or called hurtful names. They wanted others to make their children feel loved and valued. Empathy was shown through the parents\' patience, guidance, and understanding of their children\'s needs. Freedom was seen when the children were given opportunities to learn through SPED and continue developing at home with their parents\' support. Transcendence was shown in how the parents continued caring, teaching, and encouraging their children despite years of challenges, discrimination, and difficulties.',
       },
       {
         name: 'Bowen',

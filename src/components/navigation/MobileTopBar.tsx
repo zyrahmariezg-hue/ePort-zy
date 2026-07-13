@@ -79,7 +79,7 @@ export function MobileTopBar() {
   return (
     <>
       <header className="epf-topbar">
-        <Link to="/" className="epf-brand" aria-label={`${siteMeta.wordmark} — home`}>
+        <Link to="/" className="epf-brand" aria-label={`${siteMeta.wordmark} - home`}>
           <span className="epf-brand-mark" aria-hidden="true" />
           <span className="epf-brand-name">{siteMeta.wordmark}</span>
         </Link>
